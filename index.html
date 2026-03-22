@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 瀨戶內櫻花季 (微調版)</title>
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; background-color: #f2f2f7; color: #1c1c1e; }
+        .tab-content { display: none; padding-bottom: 120px; }
+        .active-tab { display: block; }
+        .card { background: white; border-radius: 14px; margin-bottom: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .nav-btn { background: #000; color: #fff; padding: 6px 14px; border-radius: 10px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; }
+        .tag { font-size: 10px; padding: 2px 8px; border-radius: 6px; font-weight: 700; display: inline-block; margin-top: 4px; margin-right: 4px; }
+        .tag-qr { background: #e3f2fd; color: #1976d2; }
+        .tag-food { background: #fff3e0; color: #e65100; }
+        .tag-code { background: #f3e5f5; color: #7b1fa2; }
+        .tag-important { background: #ffebee; color: #c62828; }
+        .weather-card { background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%); color: white; padding: 12px; border-radius: 12px; margin-bottom: 12px; font-size: 12px; }
+        .sticky-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border-bottom: 0.5px solid #d1d1d6; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="sticky-nav overflow-x-auto whitespace-nowrap px-4 py-3 no-scrollbar">
+    <div class="flex space-x-2">
+        <button onclick="showDay('day1')" class="day-tab px-4 py-1 rounded-full text-sm font-bold bg-black text-white" id="tab-day1">3/28</button>
+        <button onclick="showDay('day2')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day2">3/29</button>
+        <button onclick="showDay('day3')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day3">3/30</button>
+        <button onclick="showDay('day4')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day4">3/31</button>
+        <button onclick="showDay('day5')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day5">4/1</button>
+        <button onclick="showDay('day6')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day6">4/2</button>
+        <button onclick="showDay('day7')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day7">4/3</button>
+        <button onclick="showDay('day8')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day8">4/4</button>
+        <button onclick="showDay('day9')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-gray-400" id="tab-day9">4/5</button>
+        <button onclick="showDay('finance')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-green-600" id="tab-finance">記帳</button>
+        <button onclick="showDay('tools')" class="day-tab px-4 py-1 rounded-full text-sm font-bold text-blue-600" id="tab-tools">工具箱</button>
+    </div>
+</div>
+
+<div class="p-4">
+    <div id="day1" class="tab-content active-tab">
+        <div class="weather-card">☀️ 11°C - 17°C (體感 14°C) | 🧥 Urban Outdoor：建議薄風衣 + Hoka Transport。</div>
+        <div class="card"><div class="font-bold text-sm text-gray-400 mb-1">09:40</div><div class="font-bold">肯驛機場接送 (南投-桃機)</div><div class="tag tag-code">代號：F15047611</div></div>
+        <div class="card"><div class="font-bold text-sm text-gray-400 mb-1">14:30 - 17:55</div><div class="font-bold underline">CI178 桃園機場 T2 – 高松機場</div></div>
+        <div class="card"><div class="font-bold text-sm text-gray-400 mb-1">18:55 - 19:42</div><div class="font-bold">高松機場巴士</div></div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-sm text-gray-400 mb-1">19:50 入住</div><div class="font-bold">JRクレメントイン高松</div><div class="tag tag-code">K25110104435</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=JR+Clement+Inn+Takamatsu" class="nav-btn">📍 導航</a>
+        </div>
+    </div>
+
+    <div id="day2" class="tab-content">
+        <div class="weather-card">☁️ 10°C - 16°C (體感 13°C) | 🚲 豐島坡度多，建議著彈性機能褲。</div>
+        <div class="card"><div class="font-bold">07:41-08:16 高速船 高松-豊島 (株式会社豊島フェリー)</div></div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">08:30</div><div class="font-bold">豊島PP合同会社 取車</div><div class="tag tag-code">預約：31192</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Teshima+PP" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold">唐櫃・豊島の棚田</div></div>
+            <a href="https://maps.app.goo.gl/C5p5farNnciLPJPm8" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold">豊島美術館 (10:30)</div><div class="tag tag-qr">QR Code 入場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Teshima+Art+Museum" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-orange-700">島キッチン 午餐 (13:00)</div><div class="tag tag-food underline font-bold">必吃：島キッチンセット ¥1,760</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Shima+Kitchen" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card space-y-3">
+            <div class="time-label text-xs text-gray-400 font-bold">15:00</div>
+            <div class="flex justify-between items-center"><span>線の記憶 塩田千春</span><a href="https://maps.app.goo.gl/5gvT2KMjYA6j3rhMA" class="nav-btn">📍</a></div>
+            <div class="flex justify-between items-center"><span>海を夢見る人々の場所</span><a href="https://maps.app.goo.gl/3ueB1UZFAEwuGDzG8" class="nav-btn">📍</a></div>
+        </div>
+        <div class="card bg-gray-50 border-none">
+            <div class="text-xs font-bold text-gray-500 mb-2">回程船班：15:10-16:00 / 17:20-17:55 高速船</div>
+        </div>
+        <div class="card flex justify-between items-center">
+            <span class="font-bold">TAKAMATSU ORNE (18:00)</span>
+            <a href="https://maps.app.goo.gl/gTam4eDEP91z4QS38" class="nav-btn">📍</a>
+        </div>
+    </div>
+
+    <div id="day3" class="tab-content">
+        <div class="weather-card">🌦 10°C - 15°C (體感 12°C) | 🚢 船上風強，備妥 Urban Outdoor 防風層。</div>
+        <div class="card">
+            <div class="font-bold mb-2">渡輪時間 (雌雄島海運)：</div>
+            <div class="text-xs font-mono space-y-1">
+                <div>• 0800-0840 高松-男木島</div>
+                <div>• 1000-1040 高松-男木島</div>
+                <div>• 1100-1120 男木島-女木島</div>
+                <div>• 1300-1320 男木島-女木島</div>
+                <div>• 1520-1540 女木島-高松</div>
+                <div>• 1720-1740 女木島-高松</div>
+            </div>
+        </div>
+        <div class="card space-y-3">
+            <div class="font-bold text-sm">男木島參考行程：</div>
+            <div class="flex justify-between items-center"><span>豊玉姫神社</span><a href="https://maps.app.goo.gl/WYFCpTf8TNU877DR6" class="nav-btn">📍</a></div>
+            <div class="flex justify-between items-center">
+                <div><span>夕陽と貓の家</span><div class="text-[10px] text-orange-500 font-bold">推薦：鯛魚燒、自家烘焙咖啡</div></div>
+                <a href="https://maps.app.goo.gl/kC28cK3RayqVck5V9" class="nav-btn">📍</a>
+            </div>
+            <div class="flex justify-between items-center"><span>男木島の魂 (og01)</span><a href="https://maps.app.goo.gl/K8uMH6SfqPVPBe9z8" class="nav-btn">📍</a></div>
+            <div class="flex justify-between items-center"><span>「タコツボル」TEAM 男氣</span><a href="https://maps.app.goo.gl/wSoiE7WuduSNdPFy5" class="nav-btn">📍</a></div>
+            <div class="flex justify-between items-center"><span>路地壁畫プロジェクト wallalley</span><a href="https://maps.app.goo.gl/4iosZYszhfMbYFS29" class="nav-btn">📍</a></div>
+        </div>
+        <div class="card flex justify-between items-center text-sm font-bold border-l-4 border-green-500">
+            <span>丸亀町グリーン (18:00)</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Marugamemachi+Green" class="nav-btn">📍</a>
+        </div>
+    </div>
+
+    <div id="day4" class="tab-content">
+        <div class="weather-card">☀️ 9°C - 16°C (體感 13°C) | 🧥 直島步行較多，適合 Hoka 靴款。</div>
+        <div class="card"><div class="font-bold underline text-sm">08:12-09:02 渡輪 高松港-直島 (四国汽船株式会社)</div></div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">09:30</div><div class="font-bold">Ougiya Rent-a-Cycle</div><div class="tag tag-code">預約：260331762</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ougiya+Naoshima" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center text-blue-700">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">09:50</div><div class="font-bold font-black">ヴァレーギャラリー</div><div class="tag tag-qr">QR Code 入場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Valley+Gallery+Naoshima" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center text-red-700 font-black">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">11:15</div><div class="font-bold font-black text-red-700">地中美術館</div><div class="tag tag-qr">QR Code 入場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Chichu+Art+Museum" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center">
+            <span class="font-bold underline text-pink-500">🌸 桜の迷宮</span>
+            <a href="https://maps.app.goo.gl/4vQR9ZV8rwF3dJoF9" class="nav-btn">📍</a>
+        </div>
+        <div class="card border-orange-300">
+            <div class="flex justify-between items-center">
+                <div><div class="font-bold text-orange-600 underline">13:45 前完成黃南瓜拍照</div><div class="text-xs text-orange-400 font-bold mt-1">※ 預留單車前往本村交通時間 (2km)</div></div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Naoshima+Yellow+Pumpkin" class="nav-btn">📍</a>
+            </div>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">14:20 (14:10 集合)</div><div class="font-bold text-red-700 font-black underline">家プロジェクト「南寺」</div><div class="tag tag-qr">QR Code 入場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Minamidera+Naoshima" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">14:50</div><div class="font-bold underline">直島新美術館</div><div class="tag tag-qr">QR Code 入場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Naoshima+New+Museum" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card bg-gray-50 border-none">
+            <div class="text-xs font-bold text-gray-500 mb-2">16:30 還車 | 船班回程：</div>
+            <div class="font-bold underline text-sm">17:00-18:00 渡輪 直島-高松港 (四国汽船株式会社)</div>
+        </div>
+    </div>
+
+    <div id="day5" class="tab-content">
+        <div class="weather-card">☀️ 11°C - 17°C (體感 15°C) | 🚗 小豆島自駕路窄，備妥墨鏡。</div>
+        <div class="card"><div class="font-bold underline text-sm">09:00-10:00 渡輪 高松港-小豆島土庄港 (小豆島渡輪)</div></div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold text-xs text-gray-400 mb-1">10:30 租車</div><div class="font-bold">オリックスレンタカー 小豆島店</div><div class="tag tag-code">預約：W7688631</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Orix+Rent+a+Car+Shodoshima" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card grid grid-cols-1 gap-2 text-sm">
+            <div class="flex justify-between items-center"><span>中山千枚田</span><a href="https://www.google.com/maps/search/?api=1&query=中山千枚田" class="text-blue-500 font-bold">📍</a></div>
+            <div class="flex justify-between items-center"><span>小豆島オリーブ公園</span><a href="https://www.google.com/maps/search/?api=1&query=小豆島オリーブ公園" class="text-blue-500 font-bold">📍</a></div>
+            <div class="flex justify-between items-center font-bold text-pink-600"><span>🌸 常光寺(櫻花)</span><a href="https://www.google.com/maps/search/?api=1&query=常光寺+小豆島" class="nav-btn py-1 px-3 text-xs">📍</a></div>
+            <div class="flex justify-between items-center"><span>小豆島現代美術館</span><a href="https://www.google.com/maps/search/?api=1&query=マルキン醬油記念館" class="text-blue-500 font-bold">📍</a></div>
+            <div class="flex justify-between items-center"><span>マルキン醤油記念館</span><a href="https://www.google.com/maps/search/?api=1&query=迷路のまち" class="text-blue-500 font-bold">📍</a></div>
+            <div class="flex justify-between items-center"><span>迷路のまち</span><a href="https://www.google.com/maps/search/?api=1&query=Angel+Road+Shodoshima" class="text-blue-500 font-bold">📍</a></div>
+            <div class="border-t pt-2">
+                <div class="flex justify-between items-center font-bold text-blue-600">
+                    <div>エンジェルロード (14:23-20:23 砂の道)</div>
+                    <a href="https://maps.app.goo.gl/MY6QooSdeH9HCb2E9" class="nav-btn">📍</a>
+                </div>
+                <div class="text-[10px] text-gray-500 mt-1 flex justify-between items-center">
+                    <span>🅿️ エンジェルロード第一駐車場(有料・巴士可)</span>
+                    <a href="https://maps.app.goo.gl/d5KRqMi89GBQ5rbb8" class="underline">導航 📍</a>
+                </div>
+            </div>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="time-label font-bold text-xs text-gray-400 mb-1">15:30 - 16:00 Check-in</div><div class="font-bold underline text-blue-800">お泊り忠左衛門 吉野</div></div>
+            <a href="https://maps.app.goo.gl/tg26HhjZuRJ54akWA" class="nav-btn">📍 導航</a>
+        </div>
+    </div>
+
+    <div id="day6" class="tab-content">
+        <div class="weather-card">☀️ 12°C - 18°C (體感 16°C) | 🖼 大塚美術館冷氣強，備妥機能中層。</div>
+        <div class="card flex justify-between items-center">
+            <div><div class="time-label text-red-500 font-bold">10:30 還車</div><div class="font-bold">オリックスレンタカー 小豆島店</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Orix+Rent+a+Car+Shodoshima" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card bg-gray-50 border-none space-y-2">
+            <div class="font-bold text-gray-500 text-xs">10:50 土庄港行程：</div>
+            <div class="flex justify-between items-center text-xs"><span>再次 ･･･ (again…)</span><a href="https://maps.app.goo.gl/VKoRgUTAFdzncxbM8" class="text-blue-500 font-bold underline">📍</a></div>
+            <div class="flex justify-between items-center text-xs"><span>太陽の贈り物</span><a href="https://maps.app.goo.gl/KueBdU2gdntDqdg5A" class="text-blue-500 font-bold underline">📍</a></div>
+            <div class="flex justify-between items-center text-xs"><span>土庄港觀光中心</span><a href="https://www.google.com/maps/search/?api=1&query=Tonosho+Port+Tourist+Center" class="text-blue-500 font-bold underline">📍</a></div>
+        </div>
+        <div class="card bg-blue-50 border-blue-200 border-none">
+            <div class="font-bold underline text-sm text-blue-800">11:25-12:25 渡輪 小豆島-高松港 (小豆島渡輪)</div>
+        </div>
+        <div class="card flex justify-between items-center">
+            <div><div class="time-label text-blue-700 font-bold text-xs text-gray-400 mb-1">13:00 取車</div><div class="font-bold">オリックスレンタカー 高松駅前店</div><div class="tag tag-code">W7688678</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Orix+Rent+a+Car+Takamatsu+Station" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card">
+            <div class="flex justify-between items-center">
+                <div><div class="font-bold underline">大塚國際美術館</div><div class="tag tag-important underline font-black">必看重點：戶外莫內</div></div>
+                <a href="https://maps.app.goo.gl/5zHUb64dBvDWPDUG8 " class="nav-btn">📍 導航</a>
+            </div>
+            <div class="text-[10px] mt-2 text-gray-500 font-bold border-t pt-2">
+                ※ 購票後至停車場搭接駁車。 
+                <a href="https://maps.app.goo.gl/ebiTF299tDSQ8diaA" class="text-blue-500 underline ml-1">🅿️ 停車場導航</a>
+            </div>
+        </div>
+        <div class="card border-red-300">
+            <div class="font-bold text-red-600">鳴門海峽 鳴門 第1駐車場 (16:30)</div>
+            <div class="text-xs font-bold mt-1 text-red-700">※ 17:30 前入場 | 18:40 滿潮</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Naruto+Park+Parking+1" class="nav-btn mt-2">📍 導航</a>
+        </div>
+        <div class="card flex justify-between items-center border-l-4 border-green-500">
+            <div><div class="font-bold font-black underline">アパホテル丸亀駅前大通</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=APA+Hotel+Marugame-Ekimaeodor" class="nav-btn">📍 導航</a>
+        </div>
+    </div>
+
+    <div id="day7" class="tab-content">
+        <div class="weather-card">☀️ 11°C - 18°C (體感 16°C) | 🥾 爬山建議穿支撐力佳的 Urban Outdoor 鞋款。</div>
+        <div class="card flex justify-between items-center">
+            <div><div class="font-bold font-black underline">08:30 🌸 金刀比羅宮</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kotohira-gu+Shrine" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card space-y-2 text-xs text-gray-400">
+            <div class="flex justify-between items-center"><span>琴平海洋博物館駐車場 (參拜可)</span><a href="https://maps.app.goo.gl/GMYijjYxvsR6Zjg5A" class="font-bold underline text-blue-500">📍</a></div>
+            <div class="flex justify-between items-center"><span>中野うどん學校琴平校【中央駐車場】</span><a href="https://maps.app.goo.gl/v2rmWUpTq3fAHr9c6" class="font-bold underline text-blue-500">📍</a></div>
+        </div>
+        <div class="card border-pink-200">
+            <div class="font-bold text-pink-700 underline font-black">🌸 紫雲出山 (已預約)</div>
+            <div class="text-xs mt-1">C組 12:30 | D組 14:30 於大浜漁港集合</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ohama+Fishing+Port+Mitoyo" class="nav-btn mt-2">📍 導航大浜漁港</a>
+        </div>
+        <div class="card flex justify-between items-center border-blue-200 bg-blue-50">
+            <div><div class="time-label font-bold text-blue-700 text-xs mb-1">17:00 父母ヶ浜</div><div class="tag tag-important">秘書提醒：備妥拖鞋、毛巾</div> <div class="text-xs mt-1 font-bold">18:20 日落 | 14:30-18:45 乾潮</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Chichibugahama+Parking+1" class="nav-btn">📍 導航</a>
+        </div>
+    </div>
+
+    <div id="day8" class="tab-content">
+        <div class="weather-card">☁️ 10°C - 17°C (體感 15°C) | 🏯 櫻花季城區壅塞，備妥機能保溫瓶。</div>
+        <div class="card flex justify-between items-center border-pink-300">
+            <div><div class="font-bold text-pink-700 underline font-black">🌸 丸龜城 道誉ざくら</div></div>
+            <a href="https://maps.app.goo.gl/FwpnouC4Xw88GeDE8" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card">
+            <div class="flex justify-between items-center">
+                <div class="font-bold">高屋神社 本宮鳥居</div>
+                <a href="https://maps.app.goo.gl/oxEHWgobTVso6Svi6" class="nav-btn">📍 導航</a>
+            </div>
+            <div class="text-[10px] text-gray-500 mt-1 font-bold">※ 車停放在「仁尾方面展望所」</div>
+        </div>
+        <div class="card flex justify-between items-center text-orange-800">
+            <div><div class="font-bold underline font-black text-orange-800">道後温泉 駐車場</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Dogo+Onsen+Parking" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card">
+            <div class="font-bold mb-1 underline">🌸 松山城 城山公園</div>
+            <div class="flex justify-between items-center text-xs"><span>停車：二之丸入園者専用駐車場</span> <a href="https://www.google.com/maps/search/?api=1&query=Ninomaru+Matsuyama+Castle+Parking" class="nav-btn text-white">📍 導航</a></div>
+        </div>
+    </div>
+
+    <div id="day9" class="tab-content">
+        <div class="weather-card">☀️ 12°C - 19°C (體感 17°C) | ✈️ 準備賦歸，整理 Urban Outdoor 戰利品。</div>
+        <div class="card grid grid-cols-2 gap-2 text-xs">
+            <a href="https://www.google.com/maps/search/?api=1&query=呆呆獸公園" class="p-2 border rounded-lg text-center font-bold">呆呆獸公園 📍</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=北浜alley" class="p-2 border rounded-lg text-center font-bold">北浜alley 📍</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=屋島+Mt.+Yashima" class="p-2 border rounded-lg text-center font-bold">屋島 📍</a>
+            <div class="col-span-2 p-3 border border-blue-400 rounded-lg bg-blue-50">
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-black text-blue-800 underline">栗林公園</span>
+                    <a href="https://maps.app.goo.gl/vd39P6svKWJNhDYFA" class="nav-btn py-1 px-3 text-xs">📍 導航</a>
+                </div>
+                <div class="text-[10px] text-blue-600 font-bold">※ 入園￥500、遊船￥850、茶道體驗￥800。參觀後可逛「かがわ物産館 栗林庵」</div>
+            </div>
+        </div>
+        <div class="card flex justify-between items-center border-red-400">
+            <div><div class="font-bold text-red-500 underline font-black">高松空港還車 (16:30)</div><div class="text-xs">オリックスレンタカー 高松空港店</div></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Orix+Rent+a+Car+Takamatsu+Airport" class="nav-btn">📍 導航</a>
+        </div>
+        <div class="card text-center"><div class="font-bold underline text-sm">CI179 高松-桃園 (19:05-20:55)</div></div>
+        <div class="card flex justify-between items-center border-blue-400">
+            <div><div class="font-bold text-blue-600">桃園-南投 肯驛機場接送</div><div class="tag tag-code">代號：F15095650</div></div>
+            <div class="text-xs font-bold text-gray-400">已預約</div>
+        </div>
+    </div>
+
+    <div id="finance" class="tab-content">
+        <div class="card">
+            <h2 class="font-bold mb-3 text-lg text-green-700">💰 記帳與換算 (0.21)</h2>
+            <div class="space-y-3">
+                <input type="text" id="exp_note" placeholder="項目 (如：午餐)" class="w-full p-3 border rounded-xl text-sm">
+                <input type="number" id="exp_jpy" placeholder="輸入日圓 JPY" class="w-full p-3 border rounded-xl text-lg font-bold">
+                <button onclick="saveExpense()" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">儲存消費紀錄</button>
+            </div>
+        </div>
+        <div id="exp_list" class="space-y-2"></div>
+        <div class="mt-4 p-4 text-center">
+            <div class="text-xs text-gray-400">總計消費</div>
+            <div id="total_display" class="text-2xl font-black text-green-600">TWD 0</div>
+            <button onclick="clearExpenses()" class="text-[10px] text-gray-300 mt-4 underline">清空紀錄</button>
+        </div>
+    </div>
+
+    <div id="tools" class="tab-content">
+        <div class="card bg-gray-900 text-white p-6 rounded-2xl">
+            <h2 class="font-bold mb-4 border-b border-gray-700 pb-2 text-pink-300">🌸 2026 櫻花前線</h2>
+            <a href="https://tenki.jp/sakura/expectation/" target="_blank" class="block bg-pink-600 text-center py-3 rounded-xl font-bold mb-4">即時開花預測 (Tenki.jp)</a>
+            
+            <h2 class="font-bold mb-4 border-b border-gray-700 pb-2 text-blue-300">✈️ 航班資訊</h2>
+            <div class="text-sm space-y-2">
+                <div>去程：CI178 (14:30 桃園 T2)</div>
+                <div>回程：CI179 (19:05 高松機場)</div>
+            </div>
+            <h2 class="font-bold mt-6 mb-4 border-b border-gray-700 pb-2 text-green-300">🏠 住宿統整</h2>
+            <div class="text-sm space-y-4">
+                <div class="border-l-2 border-blue-400 pl-3">JRクレメントイン高松<br><span class="text-xs text-gray-400">3/28 - 3/31 | 代號：K25110104435</span></div>
+                <div class="border-l-2 border-green-400 pl-3">お泊り忠左衛門 吉野<br><span class="text-xs text-gray-400">4/1 入住 (小豆島)</span></div>
+                <div class="border-l-2 border-red-400 pl-3">アパホテル丸亀駅前大通<br><span class="text-xs text-gray-400">4/2 - 4/4 入住</span></div>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <h2 class="font-bold mb-2 text-red-600 text-sm">🚨 緊急聯絡</h2>
+            <div class="text-xs space-y-1">
+                <div>日本報警：110 | 急救：119</div>
+                <div>駐日代表處：+81-3-3280-7811</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDay(id) {
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active-tab'));
+        document.querySelectorAll('.day-tab').forEach(b => {
+            b.classList.remove('bg-black', 'text-white');
+            b.classList.add('text-gray-400');
+        });
+        document.getElementById(id).classList.add('active-tab');
+        document.getElementById('tab-' + id).classList.add('bg-black', 'text-white');
+        document.getElementById('tab-' + id).classList.remove('text-gray-400');
+        window.scrollTo(0,0);
+        if(id === 'finance') renderExpenses();
+    }
+
+    let records = JSON.parse(localStorage.getItem('travel_expenses') || '[]');
+
+    function saveExpense() {
+        const note = document.getElementById('exp_note').value || '未項目';
+        const jpy = document.getElementById('exp_jpy').value;
+        if(!jpy) return;
+        records.push({ note, jpy, twd: Math.round(jpy * 0.21) });
+        localStorage.setItem('travel_expenses', JSON.stringify(records));
+        document.getElementById('exp_note').value = '';
+        document.getElementById('exp_jpy').value = '';
+        renderExpenses();
+    }
+
+    function renderExpenses() {
+        const list = document.getElementById('exp_list');
+        list.innerHTML = '';
+        let total = 0;
+        records.forEach((r) => {
+            total += r.twd;
+            list.innerHTML += `
+                <div class="card flex justify-between items-center py-3">
+                    <div class="text-sm font-bold">${r.note} <span class="text-gray-400 text-[10px]">¥${r.jpy}</span></div>
+                    <div class="font-black text-green-600">NT$ ${r.twd}</div>
+                </div>
+            `;
+        });
+        document.getElementById('total_display').innerText = 'TWD ' + total;
+    }
+
+    function clearExpenses() {
+        if(confirm('確定要清空所有紀錄嗎？')) {
+            records = [];
+            localStorage.setItem('travel_expenses', '[]');
+            renderExpenses();
+        }
+    }
+</script>
+
+</body>
+</html>
